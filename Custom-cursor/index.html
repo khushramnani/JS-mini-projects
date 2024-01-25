@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Custom-cursor</title>
+
+    <style>
+
+        html , body{
+            height: 100%;
+            width: 100%;
+            margin: 0;
+            padding: 0;
+        }
+        .main{
+            height: 100%;
+            width: 100%;
+            background-color: black;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .content{
+            color: #fff;
+            font-size: 10vw;
+            mix-blend-mode: difference;
+        }
+
+        .cursor{
+            height: 50px;
+            width: 50px;
+            background-color: #fff;
+            border-radius: 50%;
+            position: absolute;
+            /* transition: all linear 0.2s */
+        }
+    </style>
+</head>
+
+
+<body>
+    <div class="main">
+
+        <div class="cursor"></div>
+        <div class="content">Hello Friends</div>
+    </div>
+</body>
+
+
+<script>
+
+    const main = document.querySelector(".main")
+    const cursor = document.querySelector('.cursor')
+
+    main.addEventListener('mousemove',(e)=>{
+        // console.log(e);
+        cursor.style.left = e.x + "px"
+        cursor.style.top = e.y + "px"
+    })
+    
+</script>
+</html>
